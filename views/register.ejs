@@ -1,0 +1,63 @@
+<!--                         NAVBAR                                                -->
+    
+<% include navbar.ejs %>
+
+<!--                         NAVBAR                                                -->
+
+
+<head>
+    <link rel='stylesheet' href='/stylesheets/bootstrap.css' />
+    <style>
+        .register-body{
+            padding: 50px;
+        }
+        .blank{
+            visibility: hidden;
+        }
+    </style>
+</head>
+<body>
+
+<div class="register-body">
+    <h2 class="page-header">Register</h2>
+    <p>Please register using the form below.</p>
+
+    
+
+    <ul class="errors" <%if(errors){ errors.forEach(function(error){ %>
+            <li class="blank"></li>
+            <li class="alert alert-danger"><%= JSON.stringify(error.msg); %></li>
+        <% });} %>
+        </ul>
+    
+
+<form method="post" action="/users/register" enctype="multipart/form-data">
+    <div class="form-group">
+        <label>Name</label>
+        <input name="name" class="form-control" type="text" placeholder="Enter Name">
+    </div>
+    <div class="form-group">
+        <label>Email</label>
+        <input name="email" class="form-control" type="text" placeholder="Enter Email">
+    </div>
+    <div class="form-group">
+            <label>Username</label>
+            <input name="username" class="form-control" type="text" placeholder="Enter Userame">
+    </div>
+    <div class="form-group">
+        <label>Password</label>
+        <input name="password" class="form-control" type="text" placeholder="Enter Password">
+    </div>
+    <div class="form-group">
+        <label>Confirm Password</label>
+        <input name="password2" class="form-control" type="text" placeholder="Retype Password">
+    </div>
+    <div class="form-group">
+        <label>Profile Image</label>
+        <input name="profileimage" class="form-control-file" type="file">
+    </div>
+    <input class = "btn btn-primary" type="submit" name="submit" value="Register">
+</form>
+</div>
+<script src="/javascripts/bootstrap.js"></script>
+</body>

@@ -1,0 +1,47 @@
+<!--                         NAVBAR                                                -->
+    
+<% include navbar.ejs %>
+
+<!--                         NAVBAR                                                -->
+<head>
+    <link rel='stylesheet' href='/stylesheets/bootstrap.css' />
+    <style>
+        .login-body{
+            padding: 50px;
+        }
+    </style>
+</head>
+<body>
+
+    <% if(expressFlash.length > 0){ %>
+        <div class="alert alert-success" , role="alert">
+        <%= expressFlash %>
+        </div>
+        <% } %>
+    <% if(failureFlash.length > 0){ %>
+        <div class="alert alert-danger" , role="alert">
+        <%= failureFlash %>
+        </div>
+    <% } %>
+
+
+<div class="login-body">
+        <h2 class="page-header">Login</h2>
+        <p>Please login first.</p>
+<form method="post" action="/users/login">
+    <div class="form-group">
+        <label>Username</label>
+        <input name="username" class="form-control" type="text" placeholder="Enter Userame">
+    </div>
+    
+    <div class="form-group">
+        <label>Password</label>
+        <input name="password" class="form-control" type="text" placeholder="Enter Password">
+    </div>
+    
+    
+    <input class = "btn btn-primary" type="submit" name="submit" value="Login">
+</form>
+</div>
+<script src="/javascripts/bootstrap.js"></script>
+</body>

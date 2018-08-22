@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>
+    <%= title %>
+  </title>
+  <link rel='stylesheet' href='/stylesheets/style.css' />
+  <link rel='stylesheet' href='/stylesheets/bootstrap.css' />
+  <style>
+    .jumbotron {
+      background-color: #52FF77;
+      color: black;
+    }
+
+    .members-area {
+      padding: 50px;
+    }
+
+    .random {
+      padding: 10px;
+    }
+  </style>
+</head>
+
+<body>
+
+<!--                         NAVBAR                                                -->
+
+  <% include navbar.ejs %>
+
+<!--                         NAVBAR                                                -->
+
+   <div class="random">
+
+        <% if(expressFlash.length > 0){ %>
+        <div class="alert alert-success" , role="alert">
+        <%= expressFlash %>
+        </div>
+        <% } %>
+
+       <div class="members-area jumbotron">
+        <h1>Member's Area</h1>
+        <p>Welcome to the member's area.</p>
+       </div>
+    </div>
+
+
+    <script src="/javascripts/bootstrap.js"></script>
+</body>
+
+</html>
