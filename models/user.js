@@ -1,7 +1,7 @@
 var mongoose = require('mongoose');
 var bcrypt = require('bcryptjs');
 
-mongoose.connect('mongodb://prateek:prateek1234@ds125872.mlab.com:25872/mytasklist_amana');
+mongoose.connect(' //Add your own mongodb database here');
 
 var db = mongoose.connection;
 
